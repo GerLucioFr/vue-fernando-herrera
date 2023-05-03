@@ -7,9 +7,30 @@
     <title>Vue intro</title>
   </head>
   <body>
-    <h1>Hola bro</h1>
+    <div id="my-app">
+      <h2>Batman quotes</h2>
+      <section>
+        <h4>Creaqte new</h4>
 
-    <div id="my-app"></div>
+        <input type="text" name="quote" v-model="newQuote.quote" />
+        <input
+          type="text"
+          name="author"
+          v-model="newQuote.author"
+          v-on:keypress.enter="addQuote"
+        />
+
+        <small>{{newQuote}}</small>
+      </section>
+
+      <ul>
+        <li v-for="({quote, author}, index) in quotes">
+          <p>{{ index + 1 }}.- {{quote}}</p>
+          <blockquote v-if="author">-{{author}}</blockquote>
+        </li>
+      </ul>
+    </div>
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
   </body>
