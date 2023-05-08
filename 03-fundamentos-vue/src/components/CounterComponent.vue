@@ -1,13 +1,21 @@
 <template>
   <div class="counter-container">
     <h1>{{ setTitle }}</h1>
-    <p>{{ counter }}{{ setPersonsCopy }}</p>
+    <p counter-id="counter">{{ counter }}{{ setPersonsCopy }}</p>
+    <p>Counter value is {{ counter }}</p>
 
     <div>
-      <button type="button" :disabled="counter === 0" @click="decreaseCounter">
+      <button
+        type="button"
+        button-type="decrease"
+        :disabled="counter === 0"
+        @click="decreaseCounter"
+      >
         Decrease -
       </button>
-      <button type="button" @click="increaseCounter">Increase +</button>
+      <button type="button" button-type="increase" @click="increaseCounter">
+        Increase +
+      </button>
     </div>
   </div>
 </template>
@@ -18,7 +26,7 @@ export default {
     title: String,
     start: {
       type: Number,
-      default: 0,
+      default: 100,
       validator(value) {
         return !value || value >= 0;
       },

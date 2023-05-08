@@ -10,6 +10,7 @@
     <div class="indecision-form">
       <input
         type="text"
+        id="question"
         v-model="question"
         :disabled="isLoading"
         placeholder="Ask me anything?"
@@ -66,6 +67,7 @@ export default {
         this.isLoading = false;
       } catch (error) {
         this.isLoading = false;
+        this.resetAnswer();
         console.error(error);
       }
     },

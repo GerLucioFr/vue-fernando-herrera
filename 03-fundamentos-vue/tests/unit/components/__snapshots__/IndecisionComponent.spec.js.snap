@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Indecision Component Test should to match with snapshot 1`] = `
+<div class="indecision-container"><img src="https://w.wallhaven.cc/full/96/wallhaven-966re1.jpg" alt="background">
+  <div class="indecision-form"><input type="text" id="question" placeholder="Ask me anything?">
+    <p>Remember to use a question mark at the end</p>
+    <div class="question">
+      <h2>Your question goes here</h2>
+      <!--v-if-->
+      <!--v-if-->
+    </div>
+  </div>
+</div>
+`;
