@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pokemon Options Component Test should to match with snapshot 1`] = `<div class="options-container"><button>buneary</button><button>lanturn</button><button>minccino</button><button>dugtrio</button></div>`;

@@ -1,9 +1,9 @@
+import { pokemonAxiosInstance } from '@/api/pokemonApi';
 import { generateRandomNumber } from './number';
-import axios from 'axios';
 
-const totalPokemons = 650;
+export const totalPokemons = 650;
 
-const getPokemonIds = (count) => {
+export const getPokemonIds = (count) => {
   let ids = [];
   let index = 0;
   while (index < count) {
@@ -13,25 +13,22 @@ const getPokemonIds = (count) => {
   return ids;
 };
 
-const getPokemonName = async (id = 1) => {
-  const baseURL = 'https://pokeapi.co/api/v2';
-  const axiosInstance = axios.create({
-    baseURL,
-  });
+export const getPokemonData = async (id = 1) => {
   try {
-    const res = await axiosInstance.get(`/pokemon/${id}`);
-    return res.data.name;
+    const res = await pokemonAxiosInstance.get(`/pokemon/${id}`);
+    const { name } = res.data;
+    return { id, name };
   } catch (err) {
-    return '';
+    return {};
   }
 };
 
 export const getPokemonOptions = async (count) => {
-  let names = [];
+  let pokemonPromises = [];
   const ids = getPokemonIds(count);
+
   for (const id of ids) {
-    const name = await getPokemonName(id);
-    names.push({ id, name });
+    pokemonPromises.push(getPokemonData(id));
   }
-  return names;
+  return await Promise.all(pokemonPromises);
 };

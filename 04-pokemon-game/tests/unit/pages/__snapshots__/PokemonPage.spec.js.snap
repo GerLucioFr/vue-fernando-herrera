@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pokemon Page Test should to match with snapshot 1`] = `
+<div class="container">
+  <h1>Who is this Pokemon?</h1>
+  <div class="game-container">
+    <div class="pokemon-container"><img class="hidden-pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/51.svg" alt="pokemon"><img class="fade-in" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/51.svg" alt="pokemon"></div>
+    <div class="options-container"><button disabled="">buneary</button><button disabled="">lanturn</button><button disabled="">minccino</button><button disabled="">dugtrio</button></div>
+    <div class="score-container">
+      <p>Current Score: 1</p>
+      <p>Best Score: 0</p>
+    </div>
+    <div class="fade-in">
+      <h3>Excellent, is dugtrio</h3><button>Next</button>
+    </div>
+    <!--v-if-->
+  </div>
+</div>
+`;

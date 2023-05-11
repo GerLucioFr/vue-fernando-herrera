@@ -73,7 +73,7 @@ export default {
     },
     handleSelection(selection) {
       this.chosenPokemon = true;
-      this.rightSelection = this.selectedPokemon === selection;
+      this.rightSelection = this.selectedPokemon.id === selection.id;
 
       if (this.rightSelection) {
         this.currentScore++;
