@@ -5,13 +5,7 @@
 
     <div v-if="!isLoading && usersData?.data?.length">
       <h1>Users</h1>
-      <UsersListComponent :users="usersData?.data" v-slot="{ user }">
-        <p>
-          <strong>{{ user.first_name }} {{ user.last_name }}</strong
-          >: {{ user.email }}
-        </p>
-      </UsersListComponent>
-      <!-- <ul>
+      <ul>
         <li
           v-for="{ id, email, first_name, last_name } in usersData.data"
           :key="id"
@@ -21,7 +15,7 @@
             >: {{ email }}
           </p>
         </li>
-      </ul> -->
+      </ul>
 
       <div class="pagination">
         <button
@@ -46,17 +40,8 @@
 
 <script>
 import useUsers from '@/composables/useUsers';
-import { defineAsyncComponent } from 'vue';
 export default {
   name: 'UsersView',
-  components: {
-    UsersListComponent: defineAsyncComponent(() =>
-      import(
-        /*webpackChunkName: 'UsersListComponent'*/ '@/components/UsersListComponent'
-      )
-    ),
-  },
-
   setup() {
     const { isLoading, usersData, previousPage, nextPage } = useUsers();
 
@@ -71,6 +56,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
 .pagination {
   display: flex;
   justify-content: center;

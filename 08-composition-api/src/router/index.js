@@ -39,6 +39,17 @@ const routes = [
     component: () =>
       import(/*webpackChunckName: 'pokemon'*/ '@/views/PokemonView'),
   },
+  {
+    path: '/todo',
+    name: 'todo',
+    component: () => import(/*webpackChunckName: 'todo'*/ '@/views/TodoView'),
+  },
+  {
+    path: '/slots',
+    name: 'slots',
+    component: () =>
+      import(/*webpackChunckName: 'slots'*/ '@/views/CustomSlotsView'),
+  },
 ];
 
 const router = createRouter({
