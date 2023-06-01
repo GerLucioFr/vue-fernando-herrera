@@ -22,12 +22,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page">Home</a>
+            <a class="nav-link active" aria-current="page">{{ name }}</a>
           </li>
         </ul>
 
         <div class="d-flex">
-          <button type="button" class="btn btn-sm btn-outline-info">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-info"
+            @click="onLogout"
+          >
             <i class="fa fa-sign-out"></i>
             Logout
           </button>
@@ -38,8 +42,14 @@
 </template>
 
 <script>
+import useAuth from '@/modules/auth/composables/useAuth';
 export default {
   name: 'NavbarComponent',
+  setup() {
+    const { name, logout } = useAuth();
+
+    return { name, onLogout: () => logout() };
+  },
 };
 </script>
 

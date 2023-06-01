@@ -24,3 +24,7 @@ export const updateEntry = (state, { entry }) => {
 export const deleteEntry = (state, { entry }) => {
   state.entries = state.entries.filter((item) => item.id !== entry.id);
 };
+
+export const clearEntries = (state) => {
+  state.entries = [];
+};

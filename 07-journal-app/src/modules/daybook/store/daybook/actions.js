@@ -1,8 +1,7 @@
 // export const action = async ({ commit }) => {};
 
-// import { generateUuid } from '@/helpers/uuid';
 import { showError, showSuccess } from '@/helpers/alert';
-import { axiosInstance } from '@/http/api';
+import { axiosInstance } from '@/http/entriesApi';
 import { uploadFile } from '@/helpers/files';
 
 const url = 'https://vue-demo-e8d58-default-rtdb.firebaseio.com';
