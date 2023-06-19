@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 import daybook from '@/modules/daybook/store/daybook';
+import auth from '@/modules/auth/store/auth';
 
 const store = createStore({
   actions: {},
@@ -8,6 +9,7 @@ const store = createStore({
   mutations: {},
   state: {},
   modules: {
+    auth,
     daybook,
   },
 });

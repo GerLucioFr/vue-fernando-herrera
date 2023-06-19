@@ -1,21 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import daybookRouter from '@/modules/daybook/router';
+import authRouter from '@/modules/auth/router';
+import isAuth from './auth-guard';
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    redirect: {
-      name: 'daybook',
-    },
+    redirect: '/daybook',
   },
   {
     path: '/daybook',
     ...daybookRouter,
+    beforeEnter: [isAuth],
+  },
+  {
+    path: '/auth',
+    ...authRouter,
   },
   {
     path: '/:pathMatch(.*)*',
-    redirect: '/daybook',
+    redirect: '/auth',
   },
 ];
 
